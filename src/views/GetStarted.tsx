@@ -1,3 +1,6 @@
+import { CodeBlock } from "../assets/utils/code-block";
+import { TerminalCodeBlock } from "../assets/utils/terminal-code-block";
+
 export default function GetStartedView() {
   return (
     <div>
@@ -21,6 +24,19 @@ export default function GetStartedView() {
         </span>{" "}
         for your preferred framework.
       </p>
+      <TerminalCodeBlock
+        code="npm install @shadcn/ui"
+        theme="light"
+        className="mt-6"
+      />
+      <CodeBlock
+        code="npm install @shadcn/ui"
+        language="tsx"
+        showLineNumbers={true}
+        filename="App.tsx"
+        theme="light"
+        className="mt-6"
+      />
     </div>
   );
 }
