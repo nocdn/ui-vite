@@ -68,10 +68,10 @@ export function TerminalCodeBlock({
   return (
     <div
       className={cn(
-        "group relative rounded-lg border font-mono text-sm pl-4.5 pr-3 py-2 flex items-center justify-between gap-3",
+        "group relative rounded-lg border font-mono w-fit text-sm pl-4.5 pr-3 py-2 flex items-center justify-between gap-3",
         theme === "dark"
-          ? "bg-[#0a0a0a] border-[#2a2a2a] text-[#e4e4e7]"
-          : "bg-[#fafafa] border-[#e5e5e5] text-[#18181b]",
+          ? "bg-[#1C202A] border-[#606060] text-[#e4e4e7] inset-ring inset-ring-white/5"
+          : "bg-[#fafafa81] border-[#e5e5e5] text-[#18181b]",
         className
       )}
     >

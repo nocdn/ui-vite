@@ -1,6 +1,7 @@
 import { ArrowUpRight, Search } from "lucide-react";
 import { useQueryState } from "nuqs";
 import GetStartedView from "./views/GetStarted";
+import ComponentDoc from "./views/ComponentDoc";
 
 function App() {
   const [selectedItem, setSelectedItem] = useQueryState("selectedItem", {
@@ -136,9 +137,16 @@ function App() {
             </div>
           </div>
         </div>
-        <div className="col-start-2 row-span-5 row-start-1 border-x border-x-(--pattern-fg) bg-[image:repeating-linear-gradient(315deg,_var(--pattern-fg)_0,_var(--pattern-fg)_1px,_transparent_0,_transparent_50%)] bg-[size:10px_10px] bg-fixed [--pattern-fg:var(--color-gray-950)]/5 max-lg:hidden dark:[--pattern-fg:var(--color-white)]/10"></div>
-        <div id="content" className="p-8">
-          <GetStartedView />
+        <div className="col-start-2 row-span-5 row-start-1 border-x border-x-(--pattern-fg) bg-[image:repeating-linear-gradient(315deg,_var(--pattern-fg)_0,_var(--pattern-fg)_1px,_transparent_0,_transparent_50%)] bg-[size:10px_10px] bg-fixed [--pattern-fg:var(--color-gray-950)]/5 dark:[--pattern-fg:var(--color-white)]/10"></div>
+        <div id="content" className="px-14 pt-10">
+          {selectedItem === "Installation" ? (
+            <GetStartedView />
+          ) : selectedItem === "Cornered Button" ? (
+            <ComponentDoc
+              componentName="Cornered Button"
+              description="This is a button, inspired by @aliszu, with a border and darker corners. Customiseable with props, adheres to shadcn/ui styling with accessibility in mind, with button semantics and keyboard navigation."
+            />
+          ) : null}
         </div>
       </div>
     </>

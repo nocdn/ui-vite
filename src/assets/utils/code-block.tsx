@@ -91,7 +91,7 @@ export function CodeBlock({
         "relative rounded-lg overflow-hidden border font-mono text-sm",
         theme === "dark"
           ? "bg-[#0a0a0a] border-[#2a2a2a] text-[#e4e4e7]"
-          : "bg-[#fafafa] border-[#e5e5e5] text-[#18181b]",
+          : "bg-[#fafafa81] border-[#e5e5e5] text-[#18181b]",
         className
       )}
     >
@@ -101,7 +101,7 @@ export function CodeBlock({
           "flex items-center justify-between pl-4 pr-3 py-1.5 border-b",
           theme === "dark"
             ? "border-[#2a2a2a] bg-[#0f0f0f]"
-            : "border-[#e5e5e5] bg-[#f5f5f5]"
+            : "border-[#e5e5e5] bg-[#f5f5f5b6]"
         )}
       >
         <div className="flex items-center gap-2">
