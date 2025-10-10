@@ -3,6 +3,7 @@
 import { Check, Copy } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { AnimatedCircularButton } from "./AnimatedButton";
+import { type CSSProperties } from "react";
 
 interface TerminalCodeBlockProps {
   code: string;
@@ -65,15 +66,25 @@ export function TerminalCodeBlock({
 
   const tokens = highlightSyntax(code);
 
+  const emptyCellStripes: CSSProperties = {
+    backgroundImage: `
+      linear-gradient(to right, white 0%, rgba(255,255,255,0.85) 1%, transparent 5%, transparent 95%, rgba(255,255,255,0.85) 99%, white 100%),
+      linear-gradient(to bottom, white 0%, rgba(255,255,255,0.85) 1.25%, transparent 2.5%, transparent 97.5%, rgba(255,255,255,0.85) 98.75%, white 100%),
+      repeating-linear-gradient(135deg, rgba(59,130,246,0.025) 0px, rgba(59,130,246,0.025) 10px, transparent 10px, transparent 20px)
+    `,
+    backgroundBlendMode: "normal",
+  };
+
   return (
     <div
       className={cn(
-        "group relative rounded-lg border font-mono w-fit text-sm pl-4.5 pr-3 py-2 flex items-center justify-between gap-3",
+        "group relative rounded-lg border font-mono w-full text-sm pl-4.5 pr-3 py-2 flex items-center justify-between gap-3",
         theme === "dark"
           ? "bg-[#1C202A] border-[#606060] text-[#e4e4e7] inset-ring inset-ring-white/5"
           : "bg-[#fafafa81] border-[#e5e5e5] text-[#18181b]",
         className
       )}
+      style={emptyCellStripes}
     >
       <code className="flex-1 overflow-x-auto whitespace-nowrap">
         {tokens.map((token, tokenIndex) => (

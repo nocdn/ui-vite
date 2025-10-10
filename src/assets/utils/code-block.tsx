@@ -101,7 +101,7 @@ export function CodeBlock({
           "flex items-center justify-between pl-4 pr-3 py-1.5 border-b",
           theme === "dark"
             ? "border-[#2a2a2a] bg-[#0f0f0f]"
-            : "border-[#e5e5e5] bg-[#f5f5f5b6]"
+            : "border-[#e5e5e5] bg-[#FAFBFB]"
         )}
       >
         <div className="flex items-center gap-2">

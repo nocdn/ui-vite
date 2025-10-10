@@ -145,6 +145,42 @@ function App() {
             <ComponentDoc
               componentName="Cornered Button"
               description="This is a button, inspired by @aliszu, with a border and darker corners. Customiseable with props, adheres to shadcn/ui styling with accessibility in mind, with button semantics and keyboard navigation."
+              installCode="bunx --bun shadcn@latest add https://ui.bartoszbak.org/r/cornered-button.json"
+              usageCode={`import { CorneredButton } from '@/components/ui/cornered-button'
+
+<CorneredButton
+  cornerColor='red'
+  cornerSize={7}
+  borderWidth={2}
+  className='font-mono cursor-pointer'
+  >
+  NEXT
+</CorneredButton>`}
+              apiReference={[
+                { prop: "asChild", type: "boolean", default: "false" },
+                { prop: "size", type: '"sm" | "md" | "lg"', default: '"md"' },
+                {
+                  prop: "variant",
+                  type: '"default" | "outline" | "ghost" | "destructive"',
+                  default: '"default"',
+                },
+                { prop: "corners", type: '"on" | "off"', default: '"on"' },
+                { prop: "borderWidth", type: "number", default: "1" },
+                { prop: "cornerSize", type: "number", default: "8" },
+                {
+                  prop: "cornerColor",
+                  type: "string",
+                  default: "hsl(var(--border))",
+                },
+                {
+                  prop: "type",
+                  type: '"button" | "submit" | "reset"',
+                  default: '"button"',
+                },
+                { prop: "className", type: "string", default: "-" },
+                { prop: "style", type: "React.CSSProperties", default: "-" },
+                { prop: "children", type: "React.ReactNode", default: "-" },
+              ]}
             />
           ) : null}
         </div>
