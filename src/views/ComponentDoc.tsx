@@ -21,7 +21,7 @@ export default function ComponentDoc({
   comingSoon?: boolean;
 }) {
   return (
-    <div className="max-w-3xl pb-24">
+    <div className="max-w-3xl pb-12">
       <p
         className={`font-jetbrains-mono text-[12px] leading-6 tracking-widest ${
           comingSoon ? "text-blue-600" : "text-gray-600"

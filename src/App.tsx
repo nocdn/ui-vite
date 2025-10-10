@@ -10,7 +10,7 @@ function App() {
 
   return (
     <>
-      <div className="h-14 flex items-center gap-6 px-5 text-sm font-inter antialiased font-[430] border-b border-gray-950/5">
+      <div className="sticky top-0 z-10 bg-white h-14 flex items-center gap-6 px-5 text-sm font-inter antialiased font-[430] border-b border-gray-950/5">
         {/* <img src={logo} alt="logo" className="size-5.5" /> */}
         <p className="mr-auto">nocdn/ui</p>
         <div className="flex items-center gap-3 bg-gray-950/2 border border-gray-950/5 pl-2 pr-2.5 py-1.25 rounded-full cursor-pointer">
@@ -28,8 +28,8 @@ function App() {
           />
         </p>
       </div>
-      <div className="grid grid-cols-[290px_40px_1fr_40px] w-full">
-        <div id="sidebar" className="px-5 pt-5">
+      <div className="grid grid-cols-[290px_40px_1fr] w-full h-[calc(100vh-3.5rem)]">
+        <div id="sidebar" className="px-5 pt-5 overflow-y-auto bg-white">
           <div className="flex flex-col gap-8">
             {/* Getting Started Section */}
             <div className="flex flex-col">
@@ -138,7 +138,10 @@ function App() {
           </div>
         </div>
         <div className="col-start-2 row-span-5 row-start-1 border-x border-x-(--pattern-fg) bg-[image:repeating-linear-gradient(315deg,_var(--pattern-fg)_0,_var(--pattern-fg)_1px,_transparent_0,_transparent_50%)] bg-[size:10px_10px] bg-fixed [--pattern-fg:var(--color-gray-950)]/5 dark:[--pattern-fg:var(--color-white)]/10"></div>
-        <div id="content" className="px-14 pt-10">
+        <div
+          id="content"
+          className="px-14 pt-10 overflow-y-auto bg-white overscroll-contain"
+        >
           {selectedItem === "Installation" ? (
             <GetStartedView />
           ) : selectedItem === "Cornered Button" ? (
