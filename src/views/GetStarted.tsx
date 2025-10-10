@@ -36,11 +36,7 @@ export default function GetStartedView() {
         This will install the cornered button component, which you can check out
         in more detail here:{" "}
         <span className="font-medium text-blue-700">
-          <a
-            href="http://localhost:5173/?selectedItem=Cornered+Button"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a href="http://localhost:5173/?selectedItem=Cornered+Button">
             cornered button
           </a>
         </span>

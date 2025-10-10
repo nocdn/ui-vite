@@ -182,6 +182,24 @@ function App() {
                 { prop: "children", type: "React.ReactNode", default: "-" },
               ]}
             />
+          ) : selectedItem === "Animated Spinner" ? (
+            <ComponentDoc
+              componentName="Animated Spinner"
+              description="A spinner (also called loader, throbber) element, inspired by the iOS default spinner. Used to indicate a loading state."
+              installCode="bunx --bun shadcn@latest add https://ui.bartoszbak.org/r/spinner.json"
+              usageCode={`import { Spinner } from '@/components/ui/spinner'
+
+<Spinner />`}
+              apiReference={[
+                { prop: "size", type: '"sm" | "md" | "lg"', default: '"md"' },
+              ]}
+            />
+          ) : selectedItem === "Reasoning Traces" ? (
+            <ComponentDoc
+              componentName="Reasoning Traces"
+              description="A component that displays reasoning traces (thoughts), for a large language model."
+              comingSoon={true}
+            />
           ) : null}
         </div>
       </div>
