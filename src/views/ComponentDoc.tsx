@@ -8,6 +8,7 @@ export default function ComponentDoc({
   usageCode = 'import { CorneredButton } from \'@/components/ui/cornered-button\'\n\n<CorneredButton\n  cornerColor="red"\n  cornerSize={7}\n  borderWidth={2}\n  className="font-mono cursor-pointer"\n>\n  NEXT\n</CorneredButton>',
   apiReference,
   previewChildren,
+  frameScale = "160",
   comingSoon = false,
 }: {
   componentName: string;
@@ -21,6 +22,7 @@ export default function ComponentDoc({
   }[];
   previewChildren?: React.ReactNode;
   comingSoon?: boolean;
+  frameScale?: string;
 }) {
   return (
     <div className="max-w-3xl pb-12">
@@ -49,7 +51,10 @@ export default function ComponentDoc({
               className="rounded-lg max-w-3xl h-96 border border-gray-200 p-1 bg-gray-50/50 mb-3"
             >
               <div className="rounded-[7px] w-full h-full border bg-white border-gray-200 grid place-items-center">
-                <div className="flex items-center gap-10 scale-160">
+                <div
+                  className="flex items-center gap-10"
+                  style={{ transform: `scale(${Number(frameScale) / 100})` }}
+                >
                   {previewChildren}
                 </div>
               </div>

@@ -1,4 +1,11 @@
-import { ArrowUpRight, Search } from "lucide-react";
+import {
+  Link2,
+  Unlink2,
+  ArrowUpRight,
+  Copy,
+  MoveRight,
+  Search,
+} from "lucide-react";
 import { useQueryState } from "nuqs";
 import GetStartedView from "./views/GetStarted";
 import ComponentDoc from "./views/ComponentDoc";
@@ -6,7 +13,7 @@ import IntroView from "./views/Intro";
 
 import { CorneredButton } from "../registry/default/ui/cornered-button/cornered-button";
 import { Check } from "lucide-react";
-
+import { AnimatedButton } from "../registry/default/ui/animated-button/animated-button";
 function corneredButtonExample() {
   return (
     <>
@@ -27,6 +34,35 @@ function corneredButtonExample() {
         <Check strokeWidth={2.5} className="text-gray-500" size={18} />
       </CorneredButton>
     </>
+  );
+}
+
+function animatedButtonExample() {
+  return (
+    <div className="flex flex-col gap-4 text-[15px]">
+      <div className="flex items-center gap-4 font-geist font-[430]">
+        <span className="opacity-30">Click to animate</span>
+        <MoveRight strokeWidth={1.5} className="opacity-20 mr-0.25" />
+        <AnimatedButton
+          className="size-4.5"
+          secondaryChildren={<Check />}
+          ariaLabel="Copy"
+        >
+          <Copy className="size-4" />
+        </AnimatedButton>
+      </div>
+      <div className="flex items-center gap-4 font-geist font-[430]">
+        <span className="opacity-30">Another animation</span>
+        <MoveRight strokeWidth={1.5} className="opacity-20 mr-0.25" />
+        <AnimatedButton
+          className="size-4.5"
+          secondaryChildren={<Unlink2 />}
+          ariaLabel="Copy"
+        >
+          <Link2 />
+        </AnimatedButton>
+      </div>
+    </div>
   );
 }
 
@@ -274,8 +310,9 @@ function App() {
           ) : selectedItem === "copy-button" ? (
             <ComponentDoc
               componentName="Copy Button"
-              description="A button that smoothly transitions between a copy and checkmark icon."
-              comingSoon={true}
+              description="A button that smoothly transitions between it's two child states."
+              previewChildren={animatedButtonExample()}
+              frameScale={"160"}
             />
           ) : selectedItem === "corner-banner" ? (
             <ComponentDoc
