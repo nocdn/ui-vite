@@ -39,10 +39,10 @@ function corneredButtonExample() {
 
 function animatedButtonExample() {
   return (
-    <div className="flex flex-col gap-4 text-[15px]">
+    <div className="flex flex-col gap-4 text-[14px]">
       <div className="flex items-center gap-4 font-geist font-[430]">
-        <span className="opacity-30">Click to animate</span>
-        <MoveRight strokeWidth={1.5} className="opacity-20 mr-0.25" />
+        <span className="opacity-30 -translate-y-[1px]">Copy Animation</span>
+        <MoveRight strokeWidth={1.25} className="opacity-20 mr-0.25" />
         <AnimatedButton
           className="size-4.5"
           secondaryChildren={<Check />}
@@ -52,8 +52,8 @@ function animatedButtonExample() {
         </AnimatedButton>
       </div>
       <div className="flex items-center gap-4 font-geist font-[430]">
-        <span className="opacity-30">Another animation</span>
-        <MoveRight strokeWidth={1.5} className="opacity-20 mr-0.25" />
+        <span className="opacity-30 -translate-y-[1px]">Link animation</span>
+        <MoveRight strokeWidth={1.25} className="opacity-20 mr-0.25" />
         <AnimatedButton
           className="size-4.5"
           secondaryChildren={<Unlink2 />}
