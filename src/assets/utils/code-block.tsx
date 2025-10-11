@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
 import { Check, Copy } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { AnimatedCircularButton } from "./AnimatedButton";
@@ -25,7 +24,7 @@ export function CodeBlock({
   className,
   wrap = true,
 }: CodeBlockProps) {
-  const [copied, setCopied] = useState(false);
+  const [_copied, setCopied] = useState(false);
 
   const handleCopy = async () => {
     await navigator.clipboard.writeText(code);
