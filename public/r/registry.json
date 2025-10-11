@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "nocdn/ui",
+  "homepage": "https://bartoszbak.org",
+  "items": [
+    {
+      "name": "cornered-button",
+      "type": "registry:ui",
+      "title": "Cornered Button",
+      "description": "A button with darker cornered edges.",
+      "files": [
+        {
+          "path": "registry/default/ui/cornered-button/cornered-button.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "dependencies": ["radix-ui"]
+    }
+  ]
+}

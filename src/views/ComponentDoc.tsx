@@ -7,6 +7,7 @@ export default function ComponentDoc({
   installCode = "bunx --bun shadcn@latest add https://ui.bartoszbak.org/r/cornered-button.json",
   usageCode = 'import { CorneredButton } from \'@/components/ui/cornered-button\'\n\n<CorneredButton\n  cornerColor="red"\n  cornerSize={7}\n  borderWidth={2}\n  className="font-mono cursor-pointer"\n>\n  NEXT\n</CorneredButton>',
   apiReference,
+  previewChildren,
   comingSoon = false,
 }: {
   componentName: string;
@@ -18,6 +19,7 @@ export default function ComponentDoc({
     type: string;
     default: string;
   }[];
+  previewChildren?: React.ReactNode;
   comingSoon?: boolean;
 }) {
   return (
@@ -46,8 +48,10 @@ export default function ComponentDoc({
               id="frame"
               className="rounded-lg max-w-3xl h-96 border border-gray-200 p-1 bg-gray-50/50 mb-3"
             >
-              <div className="rounded-[7px] w-full h-full border border-gray-200 bg-white grid place-items-center">
-                <div className="flex items-center gap-10 scale-150"></div>
+              <div className="rounded-[7px] w-full h-full border bg-white border-gray-200 grid place-items-center">
+                <div className="flex items-center gap-10 scale-160">
+                  {previewChildren}
+                </div>
               </div>
             </div>
           </div>

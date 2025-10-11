@@ -3,7 +3,7 @@ import { TerminalCodeBlock } from "../assets/utils/terminal-code-block";
 export default function GetStartedView() {
   return (
     <div className="max-w-4xl">
-      <p className="font-jetbrains-mono text-[12px] leading-6 tracking-widest text-gray-600">
+      <p className="font-jetbrains-mono font-semibold text-[12px] leading-6 tracking-widest text-gray-600">
         INSTALLATION
       </p>
       <p className="font-geist text-3xl leading-6 font-medium mt-3">

@@ -26,11 +26,13 @@ export function AnimatedCircularButton({
         className
       )}
       onClick={() => {
-        setIsShowingSecondary(!isShowingSecondary);
-        onClick?.();
-        setTimeout(() => {
-          setIsShowingSecondary(false);
-        }, 1000);
+        if (!isShowingSecondary) {
+          setIsShowingSecondary(!isShowingSecondary);
+          onClick?.();
+          setTimeout(() => {
+            setIsShowingSecondary(false);
+          }, 1000);
+        }
       }}
     >
       <AnimatePresence mode="popLayout" initial={false}>

@@ -2,23 +2,52 @@ import { ArrowUpRight, Search } from "lucide-react";
 import { useQueryState } from "nuqs";
 import GetStartedView from "./views/GetStarted";
 import ComponentDoc from "./views/ComponentDoc";
+import IntroView from "./views/Intro";
+
+import { CorneredButton } from "../registry/default/ui/cornered-button/cornered-button";
+import { Check } from "lucide-react";
+
+function corneredButtonExample() {
+  return (
+    <>
+      <CorneredButton
+        cornerColor="red"
+        cornerSize={7}
+        borderWidth={2}
+        className="font-jetbrains-mono cursor-pointer"
+      >
+        NEXT
+      </CorneredButton>
+      <CorneredButton
+        cornerColor="gray"
+        cornerSize={7}
+        borderWidth={2}
+        className="font-mono cursor-pointer"
+      >
+        <Check strokeWidth={2.5} className="text-gray-500" size={18} />
+      </CorneredButton>
+    </>
+  );
+}
 
 function App() {
   const [selectedItem, setSelectedItem] = useQueryState("item", {
-    defaultValue: "installation",
+    defaultValue: "introduction",
   });
 
   return (
     <>
-      <div className="sticky top-0 z-10 bg-white h-14 flex items-center gap-6 px-5 text-sm font-inter antialiased font-[430] border-b border-gray-950/5">
-        {/* <img src={logo} alt="logo" className="size-5.5" /> */}
-        <a className="mr-auto cursor-pointer group" href="/">
+      <div className="sticky top-0 z-10 bg-gray-50/35 h-14 flex items-center gap-6 px-5 text-sm font-inter antialiased font-[430] border-b border-gray-950/5">
+        <p
+          className="mr-auto cursor-pointer group"
+          onClick={() => setSelectedItem("introduction")}
+        >
           nocdn
           <span className="group-hover:mx-1.5 mx-0.5 transition-all duration-200 ease-[cubic-bezier(0.19,1,0.22,1)]">
             /
           </span>
           ui
-        </a>
+        </p>
         <div className="flex items-center gap-3 bg-gray-950/2 border border-gray-950/5 pl-2 pr-2.5 py-1.25 rounded-full cursor-pointer">
           <Search size={14} />
           <p className="text-xs">⌘ + K</p>
@@ -35,7 +64,7 @@ function App() {
         </p>
       </div>
       <div className="grid grid-cols-[290px_40px_1fr] w-full h-[calc(100vh-3.5rem)]">
-        <div id="sidebar" className="px-5 pt-5 overflow-y-auto bg-white">
+        <div id="sidebar" className="px-5 pt-5 overflow-y-auto bg-gray-50/35">
           <div className="flex flex-col gap-8">
             {/* Getting Started Section */}
             <div className="flex flex-col">
@@ -44,7 +73,17 @@ function App() {
               </h3>
               <div className="flex flex-col gap-2 border-l border-gray-950/5">
                 <button
-                  onMouseDown={() => setSelectedItem("Installation")}
+                  onMouseDown={() => setSelectedItem("introduction")}
+                  className={`text-left text-[14px] leading-6 font-inter pl-3 border-l cursor-pointer ${
+                    selectedItem === "introduction"
+                      ? "font-[550] border-gray-950/90 text-gray-950"
+                      : "font-normal border-transparent text-gray-950/60"
+                  }`}
+                >
+                  Introduction
+                </button>
+                <button
+                  onMouseDown={() => setSelectedItem("installation")}
                   className={`text-left text-[14px] leading-6 font-inter pl-3 border-l cursor-pointer ${
                     selectedItem === "installation"
                       ? "font-[550] border-gray-950/90 text-gray-950"
@@ -103,6 +142,26 @@ function App() {
                   Animated Spinner
                 </button>
                 <button
+                  onMouseDown={() => setSelectedItem("copy-button")}
+                  className={`text-left text-[14px] leading-6 font-inter pl-3 border-l cursor-pointer ${
+                    selectedItem === "copy-button"
+                      ? "font-[550] border-gray-950/90 text-gray-950"
+                      : "font-normal border-transparent text-gray-600"
+                  }`}
+                >
+                  Copy Button
+                </button>
+                <button
+                  onMouseDown={() => setSelectedItem("corner-banner")}
+                  className={`text-left text-[14px] leading-6 font-inter pl-3 border-l cursor-pointer ${
+                    selectedItem === "corner-banner"
+                      ? "font-[550] border-gray-950/90 text-gray-950"
+                      : "font-normal border-transparent text-gray-600"
+                  }`}
+                >
+                  Corner Banner
+                </button>
+                <button
                   onMouseDown={() => setSelectedItem("reasoning-traces")}
                   className={`text-left text-[14px] leading-6 font-inter pl-3 border-l cursor-pointer ${
                     selectedItem === "reasoning-traces"
@@ -143,12 +202,14 @@ function App() {
             </div>
           </div>
         </div>
-        <div className="col-start-2 row-span-5 row-start-1 border-x border-x-(--pattern-fg) bg-[image:repeating-linear-gradient(315deg,_var(--pattern-fg)_0,_var(--pattern-fg)_1px,_transparent_0,_transparent_50%)] bg-[size:10px_10px] bg-fixed [--pattern-fg:var(--color-gray-950)]/5 dark:[--pattern-fg:var(--color-white)]/10"></div>
+        <div className="col-start-2 row-span-5 row-start-1 border-x border-x-(--pattern-fg) bg-gray-50/35 bg-[image:repeating-linear-gradient(315deg,_var(--pattern-fg)_0,_var(--pattern-fg)_1px,_transparent_0,_transparent_50%)] bg-[size:10px_10px] bg-fixed [--pattern-fg:var(--color-gray-950)]/5 dark:[--pattern-fg:var(--color-white)]/10"></div>
         <div
           id="content"
-          className="px-14 pt-10 overflow-y-auto bg-white overscroll-contain"
+          className="px-14 pt-10 overflow-y-auto bg-gray-50/35 overscroll-contain"
         >
-          {selectedItem === "installation" ? (
+          {selectedItem === "introduction" ? (
+            <IntroView />
+          ) : selectedItem === "installation" ? (
             <GetStartedView />
           ) : selectedItem === "cornered-button" ? (
             <ComponentDoc
@@ -190,6 +251,7 @@ function App() {
                 { prop: "style", type: "React.CSSProperties", default: "-" },
                 { prop: "children", type: "React.ReactNode", default: "-" },
               ]}
+              previewChildren={corneredButtonExample()}
             />
           ) : selectedItem === "spinner" ? (
             <ComponentDoc
@@ -207,6 +269,18 @@ function App() {
             <ComponentDoc
               componentName="Reasoning Traces"
               description="A component that displays reasoning traces (thoughts), for a large language model."
+              comingSoon={true}
+            />
+          ) : selectedItem === "copy-button" ? (
+            <ComponentDoc
+              componentName="Copy Button"
+              description="A button that smoothly transitions between a copy and checkmark icon."
+              comingSoon={true}
+            />
+          ) : selectedItem === "corner-banner" ? (
+            <ComponentDoc
+              componentName="Corner Banner"
+              description="A banner that is anchored to the corner of a component. Follows accessibility guidelines."
               comingSoon={true}
             />
           ) : null}
