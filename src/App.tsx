@@ -207,6 +207,16 @@ function App() {
                 >
                   Reasoning Traces
                 </button>
+                <button
+                  onMouseDown={() => setSelectedItem("ticker")}
+                  className={`text-left text-[14px] leading-6 font-inter pl-3 border-l cursor-pointer ${
+                    selectedItem === "ticker"
+                      ? "font-[550] border-gray-950/90 text-gray-950"
+                      : "font-normal border-transparent text-gray-600"
+                  }`}
+                >
+                  Animated Ticker
+                </button>
               </div>
             </div>
             <div className="flex flex-col">
@@ -318,6 +328,12 @@ function App() {
             <ComponentDoc
               componentName="Corner Banner"
               description="A banner that is anchored to the corner of a component. Follows accessibility guidelines."
+              comingSoon={true}
+            />
+          ) : selectedItem === "ticker" ? (
+            <ComponentDoc
+              componentName="Animated Ticker"
+              description="A status ticker that animates nicely when changed."
               comingSoon={true}
             />
           ) : null}
