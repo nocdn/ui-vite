@@ -78,7 +78,7 @@ export function TerminalCodeBlock({
   return (
     <div
       className={cn(
-        "group relative rounded-lg border font-mono w-full text-sm pl-4.5 pr-3 py-2 flex items-center justify-between gap-3",
+        "group relative rounded-lg border font-jetbrains-mono w-full text-sm pl-4.5 pr-3 py-2 flex items-center justify-between gap-3",
         theme === "dark"
           ? "bg-[#1C202A] border-[#606060] text-[#e4e4e7] inset-ring inset-ring-white/5"
           : "bg-[#fafafa81] border-[#e5e5e5] text-[#18181b]",
@@ -86,7 +86,7 @@ export function TerminalCodeBlock({
       )}
       style={emptyCellStripes}
     >
-      <code className="flex-1 overflow-x-auto whitespace-nowrap">
+      <code className="font-jetbrains-mono flex-1 overflow-x-auto whitespace-nowrap">
         {tokens.map((token, tokenIndex) => (
           <span
             key={tokenIndex}

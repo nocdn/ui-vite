@@ -87,7 +87,7 @@ export function CodeBlock({
   return (
     <div
       className={cn(
-        "relative rounded-lg overflow-hidden border font-mono text-sm",
+        "relative rounded-lg overflow-hidden border font-jetbrains-mono text-sm",
         theme === "dark"
           ? "bg-[#0a0a0a] border-[#2a2a2a] text-[#e4e4e7]"
           : "bg-[#fafafa81] border-[#e5e5e5] text-[#18181b]",
@@ -107,7 +107,7 @@ export function CodeBlock({
           {filename && (
             <span
               className={cn(
-                "text-xs font-medium font-jetbrains",
+                "text-xs font-medium font-jetbrains-mono",
                 theme === "dark" ? "text-[#a1a1aa]" : "text-[#71717a]"
               )}
             >
@@ -117,7 +117,7 @@ export function CodeBlock({
           {language && (
             <span
               className={cn(
-                "text-xs px-2 py-0.5 rounded font-jetbrains",
+                "text-xs px-2 py-0.5 rounded font-jetbrains-mono",
                 theme === "dark"
                   ? "bg-[#1a1a1a] text-[#71717a]"
                   : "bg-[#e5e5e5] text-[#52525b]"

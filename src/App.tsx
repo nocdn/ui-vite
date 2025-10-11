@@ -29,7 +29,7 @@ function corneredButtonExample() {
         cornerColor="gray"
         cornerSize={7}
         borderWidth={2}
-        className="font-mono cursor-pointer"
+        className="font-jetbrains-mono cursor-pointer"
       >
         <Check strokeWidth={2.5} className="text-gray-500" size={18} />
       </CorneredButton>
