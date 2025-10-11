@@ -93,7 +93,7 @@ export default function ComponentDoc({
                             : ""
                         }
                       >
-                        <td className="px-4 py-3 font-geist-mono text-[14px] text-sky-500">
+                        <td className="px-4 py-3 font-geist-mono text-[14px] text-[#2B67EB]">
                           {item.prop}
                         </td>
                         <td className="px-4 py-3 font-geist-mono text-[14px]">

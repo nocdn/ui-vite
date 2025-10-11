@@ -11,7 +11,7 @@ export default function GetStartedView() {
       </p>
       <p className="mt-6 font-inter text-gray-700 leading-7">
         The components use a shadcn/ui registry to distribute them, so you will
-        need to install the shadcn/ui package first. Check the official{" "}
+        need to install the shadcn package first. Check the official{" "}
         <span className="font-medium text-blue-700">
           <a
             href="https://ui.shadcn.com/docs/installation"

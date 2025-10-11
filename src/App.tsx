@@ -4,15 +4,21 @@ import GetStartedView from "./views/GetStarted";
 import ComponentDoc from "./views/ComponentDoc";
 
 function App() {
-  const [selectedItem, setSelectedItem] = useQueryState("selectedItem", {
-    defaultValue: "Installation",
+  const [selectedItem, setSelectedItem] = useQueryState("item", {
+    defaultValue: "installation",
   });
 
   return (
     <>
       <div className="sticky top-0 z-10 bg-white h-14 flex items-center gap-6 px-5 text-sm font-inter antialiased font-[430] border-b border-gray-950/5">
         {/* <img src={logo} alt="logo" className="size-5.5" /> */}
-        <p className="mr-auto">nocdn/ui</p>
+        <a className="mr-auto cursor-pointer group" href="/">
+          nocdn
+          <span className="group-hover:mx-1.5 mx-0.5 transition-all duration-200 ease-[cubic-bezier(0.19,1,0.22,1)]">
+            /
+          </span>
+          ui
+        </a>
         <div className="flex items-center gap-3 bg-gray-950/2 border border-gray-950/5 pl-2 pr-2.5 py-1.25 rounded-full cursor-pointer">
           <Search size={14} />
           <p className="text-xs">⌘ + K</p>
@@ -40,7 +46,7 @@ function App() {
                 <button
                   onMouseDown={() => setSelectedItem("Installation")}
                   className={`text-left text-[14px] leading-6 font-inter pl-3 border-l cursor-pointer ${
-                    selectedItem === "Installation"
+                    selectedItem === "installation"
                       ? "font-[550] border-gray-950/90 text-gray-950"
                       : "font-normal border-transparent text-gray-950/60"
                   }`}
@@ -48,9 +54,9 @@ function App() {
                   Installation
                 </button>
                 <button
-                  onMouseDown={() => setSelectedItem("Compatibility")}
+                  onMouseDown={() => setSelectedItem("compatibility")}
                   className={`text-left text-[14px] leading-6 font-inter pl-3 border-l cursor-pointer ${
-                    selectedItem === "Compatibility"
+                    selectedItem === "compatibility"
                       ? "font-[550] border-gray-950/90 text-gray-950"
                       : "font-normal border-transparent text-gray-600"
                   }`}
@@ -58,9 +64,9 @@ function App() {
                   Compatibility
                 </button>
                 <button
-                  onMouseDown={() => setSelectedItem("Upgrade guide")}
+                  onMouseDown={() => setSelectedItem("upgrade-guide")}
                   className={`text-left text-[14px] leading-6 font-inter pl-3 border-l cursor-pointer ${
-                    selectedItem === "Upgrade guide"
+                    selectedItem === "upgrade-guide"
                       ? "font-[550] border-gray-950/90 text-gray-950"
                       : "font-normal border-transparent text-gray-600"
                   }`}
@@ -77,9 +83,9 @@ function App() {
               </h3>
               <div className="flex flex-col gap-2 border-l border-gray-950/5">
                 <button
-                  onMouseDown={() => setSelectedItem("Cornered Button")}
+                  onMouseDown={() => setSelectedItem("cornered-button")}
                   className={`text-left text-[14px] leading-6 font-inter pl-3 border-l cursor-pointer ${
-                    selectedItem === "Cornered Button"
+                    selectedItem === "cornered-button"
                       ? "font-[550] border-gray-950/90 text-gray-950"
                       : "font-normal border-transparent text-gray-600"
                   }`}
@@ -87,9 +93,9 @@ function App() {
                   Cornered Button
                 </button>
                 <button
-                  onMouseDown={() => setSelectedItem("Animated Spinner")}
+                  onMouseDown={() => setSelectedItem("spinner")}
                   className={`text-left text-[14px] leading-6 font-inter pl-3 border-l cursor-pointer ${
-                    selectedItem === "Animated Spinner"
+                    selectedItem === "spinner"
                       ? "font-[550] border-gray-950/90 text-gray-950"
                       : "font-normal border-transparent text-gray-600"
                   }`}
@@ -97,9 +103,9 @@ function App() {
                   Animated Spinner
                 </button>
                 <button
-                  onMouseDown={() => setSelectedItem("Reasoning Traces")}
+                  onMouseDown={() => setSelectedItem("reasoning-traces")}
                   className={`text-left text-[14px] leading-6 font-inter pl-3 border-l cursor-pointer ${
-                    selectedItem === "Reasoning Traces"
+                    selectedItem === "reasoning-traces"
                       ? "font-[550] border-gray-950/90 text-gray-950"
                       : "font-normal border-transparent text-gray-600"
                   }`}
@@ -110,13 +116,13 @@ function App() {
             </div>
             <div className="flex flex-col">
               <h3 className="font-jetbrains-mono text-[12px] leading-6 text-gray-500 mb-2 tracking-widest font-medium">
-                UPDATED PLANNED
+                CONTACT
               </h3>
               <div className="flex flex-col gap-2 border-l border-gray-950/5">
                 <button
-                  onMouseDown={() => setSelectedItem("Get in touch")}
+                  onMouseDown={() => setSelectedItem("get-in-touch")}
                   className={`text-left text-[14px] leading-6 font-inter pl-3 border-l cursor-pointer ${
-                    selectedItem === "Get in touch"
+                    selectedItem === "get-in-touch"
                       ? "font-[550] border-gray-950/90 text-gray-950"
                       : "font-normal border-transparent text-gray-600"
                   }`}
@@ -124,9 +130,9 @@ function App() {
                   Get in touch
                 </button>
                 <button
-                  onMouseDown={() => setSelectedItem("Contributing")}
+                  onMouseDown={() => setSelectedItem("contributing")}
                   className={`text-left text-[14px] leading-6 font-inter pl-3 border-l cursor-pointer ${
-                    selectedItem === "Contributing"
+                    selectedItem === "contributing"
                       ? "font-[550] border-gray-950/90 text-gray-950"
                       : "font-normal border-transparent text-gray-600"
                   }`}
@@ -142,9 +148,9 @@ function App() {
           id="content"
           className="px-14 pt-10 overflow-y-auto bg-white overscroll-contain"
         >
-          {selectedItem === "Installation" ? (
+          {selectedItem === "installation" ? (
             <GetStartedView />
-          ) : selectedItem === "Cornered Button" ? (
+          ) : selectedItem === "cornered-button" ? (
             <ComponentDoc
               componentName="Cornered Button"
               description="This is a button, inspired by @aliszu, with a border and darker corners. Customiseable with props, adheres to shadcn/ui styling with accessibility in mind, with button semantics and keyboard navigation."
@@ -185,7 +191,7 @@ function App() {
                 { prop: "children", type: "React.ReactNode", default: "-" },
               ]}
             />
-          ) : selectedItem === "Animated Spinner" ? (
+          ) : selectedItem === "spinner" ? (
             <ComponentDoc
               componentName="Animated Spinner"
               description="A spinner (also called loader, throbber) element, inspired by the iOS default spinner. Used to indicate a loading state."
@@ -197,7 +203,7 @@ function App() {
                 { prop: "size", type: '"sm" | "md" | "lg"', default: '"md"' },
               ]}
             />
-          ) : selectedItem === "Reasoning Traces" ? (
+          ) : selectedItem === "reasoning-traces" ? (
             <ComponentDoc
               componentName="Reasoning Traces"
               description="A component that displays reasoning traces (thoughts), for a large language model."
