@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "animated-button",
+  "type": "registry:ui",
+  "title": "Animated Button",
+  "description": "A button that smoothly transitions between its primary and secondary states.",
+  "dependencies": [
+    "motion"
+  ],
+  "files": [
+    {
+      "path": "registry/default/ui/animated-button/animated-button.tsx",
+      "content": "import { useState, cloneElement, isValidElement } from \"react\";\nimport { motion, AnimatePresence } from \"motion/react\";\nimport { cn } from \"@/lib/utils\";\n\nexport function AnimatedButton({\n  children,\n  secondaryChildren,\n  className,\n  onClick,\n  ariaLabel,\n}: {\n  children: React.ReactNode;\n  secondaryChildren?: React.ReactNode;\n  className?: string;\n  onClick?: () => void;\n  ariaLabel: string;\n}) {\n  const [isShowingSecondary, setIsShowingSecondary] = useState(false);\n\n  const clonedChildren = isValidElement(children)\n    ? cloneElement(children, {\n        className: cn(className, (children.props as any).className),\n      } as any)\n    : children;\n\n  const clonedSecondaryChildren =\n    secondaryChildren && isValidElement(secondaryChildren)\n      ? cloneElement(secondaryChildren, {\n          className: cn(className, (secondaryChildren.props as any).className),\n        } as any)\n      : secondaryChildren;\n\n  return (\n    <motion.button\n      tabIndex={0}\n      aria-label={ariaLabel}\n      className={cn(\n        \"group flex shrink-0 cursor-pointer items-center justify-center\",\n        className\n      )}\n      onClick={() => {\n        if (!isShowingSecondary) {\n          setIsShowingSecondary(!isShowingSecondary);\n          onClick?.();\n          setTimeout(() => {\n            setIsShowingSecondary(false);\n          }, 1000);\n        }\n      }}\n    >\n      <AnimatePresence mode=\"popLayout\" initial={false}>\n        {isShowingSecondary ? (\n          <motion.div\n            key=\"secondary\"\n            initial={{ opacity: 0, scale: 0.2, filter: \"blur(2px)\" }}\n            animate={{ opacity: 1, scale: 1, filter: \"blur(0px)\" }}\n            exit={{ opacity: 0, scale: 0.2, filter: \"blur(2px)\" }}\n          >\n            {clonedSecondaryChildren}\n          </motion.div>\n        ) : (\n          <motion.div\n            key=\"primary\"\n            initial={{ opacity: 0, scale: 0.2, filter: \"blur(2px)\" }}\n            animate={{ opacity: 1, scale: 1, filter: \"blur(0px)\" }}\n            exit={{ opacity: 0, scale: 0.2, filter: \"blur(2px)\" }}\n          >\n            {clonedChildren}\n          </motion.div>\n        )}\n      </AnimatePresence>\n    </motion.button>\n  );\n}\n",
+      "type": "registry:ui"
+    }
+  ]
+}

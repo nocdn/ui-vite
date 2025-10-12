@@ -28,6 +28,19 @@
         }
       ],
       "dependencies": ["motion"]
+    },
+    {
+      "name": "ticker",
+      "type": "registry:ui",
+      "title": "Ticker",
+      "description": "A status ticker that animates nicely when it's text is changed.",
+      "files": [
+        {
+          "path": "registry/default/ui/ticker/ticker.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "dependencies": ["motion"]
     }
   ]
 }

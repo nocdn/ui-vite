@@ -5,6 +5,7 @@ import {
   Copy,
   MoveRight,
   Search,
+  Check,
 } from "lucide-react";
 import { useQueryState } from "nuqs";
 import GetStartedView from "./views/GetStarted";
@@ -12,9 +13,11 @@ import ComponentDoc from "./views/ComponentDoc";
 import IntroView from "./views/Intro";
 
 import { CorneredButton } from "../registry/default/ui/cornered-button/cornered-button";
-import { Check } from "lucide-react";
 import { AnimatedButton } from "../registry/default/ui/animated-button/animated-button";
 import { Spinner } from "../registry/default/ui/spinner/spinner";
+import { Ticker } from "../registry/default/ui/ticker/ticker";
+import { useEffect, useState } from "react";
+
 function corneredButtonExample() {
   return (
     <>
@@ -73,6 +76,32 @@ function spinnerExample() {
       <Spinner color="black" size={24} />
       <Spinner color="black" variant="small" size={16} />
       <Spinner color="black" variant="tiny" size={12} />
+    </div>
+  );
+}
+
+function TickerExample() {
+  const texts = [
+    "Shawshank Redemption (1994)",
+    "Rye Lane (2023)",
+    "Fight Club (1999)",
+    "Hijack (2023)",
+    "Snowden (2016)",
+    "About Time (2013)",
+  ];
+
+  const [currentIndex, setCurrentIndex] = useState<number>(0);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % texts.length);
+    }, 1500);
+    return () => clearInterval(id);
+  }, []);
+
+  return (
+    <div className="flex flex-col justify-center items-center">
+      <Ticker text={texts[currentIndex]} />
     </div>
   );
 }
@@ -377,7 +406,15 @@ import { Copy, Check } from 'lucide-react'
             <ComponentDoc
               componentName="Animated Ticker"
               description="A status ticker that animates nicely when changed."
-              comingSoon={true}
+              installCode="bunx --bun shadcn@latest add https://ui.bartoszbak.org/r/ticker.json"
+              usageCode={`import { Ticker } from '@/components/ui/ticker'
+
+<Ticker text="Shawshank Redemption (1994)" />`}
+              apiReference={[
+                { prop: "className", type: "string", default: "-" },
+                { prop: "text", type: "string", default: "-" },
+              ]}
+              previewChildren={<TickerExample />}
             />
           ) : null}
         </div>
