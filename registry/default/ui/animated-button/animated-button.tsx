@@ -17,7 +17,6 @@ export function AnimatedButton({
 }) {
   const [isShowingSecondary, setIsShowingSecondary] = useState(false);
 
-  // Clone children with className applied
   const clonedChildren = isValidElement(children)
     ? cloneElement(children, {
         className: cn(className, (children.props as any).className),

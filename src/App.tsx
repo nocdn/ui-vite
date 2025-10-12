@@ -14,6 +14,7 @@ import IntroView from "./views/Intro";
 import { CorneredButton } from "../registry/default/ui/cornered-button/cornered-button";
 import { Check } from "lucide-react";
 import { AnimatedButton } from "../registry/default/ui/animated-button/animated-button";
+import { Spinner } from "../registry/default/ui/spinner/spinner";
 function corneredButtonExample() {
   return (
     <>
@@ -66,6 +67,16 @@ function animatedButtonExample() {
   );
 }
 
+function spinnerExample() {
+  return (
+    <div className="flex flex-col justify-center items-center">
+      <Spinner color="black" size={24} />
+      <Spinner color="black" variant="small" size={16} />
+      <Spinner color="black" variant="tiny" size={12} />
+    </div>
+  );
+}
+
 function App() {
   const [selectedItem, setSelectedItem] = useQueryState("item", {
     defaultValue: "introduction",
@@ -88,16 +99,31 @@ function App() {
           <Search size={14} />
           <p className="text-xs">⌘ + K</p>
         </div>
-        <p className="cursor-pointer">Docs</p>
-        <p className="cursor-pointer">Components</p>
-        <p className="flex items-center gap-1 cursor-pointer">
+        <p
+          className="cursor-pointer"
+          onClick={() => setSelectedItem("installation")}
+        >
+          Docs
+        </p>
+        <p
+          className="cursor-pointer"
+          onClick={() => setSelectedItem("cornered-button")}
+        >
+          Components
+        </p>
+        <a
+          href="https://github.com/nocdn/ui-vite"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-1 cursor-pointer"
+        >
           Source{" "}
           <ArrowUpRight
             size={16}
             strokeWidth={2.15}
             className="translate-y-[1px]"
           />
-        </p>
+        </a>
       </div>
       <div className="grid grid-cols-[290px_40px_1fr] w-full h-[calc(100vh-3.5rem)]">
         <div id="sidebar" className="px-5 pt-5 overflow-y-auto bg-gray-50/35">
@@ -166,16 +192,6 @@ function App() {
                   }`}
                 >
                   Cornered Button
-                </button>
-                <button
-                  onMouseDown={() => setSelectedItem("spinner")}
-                  className={`text-left text-[14px] leading-6 font-inter pl-3 border-l cursor-pointer ${
-                    selectedItem === "spinner"
-                      ? "font-[550] border-gray-950/90 text-gray-950"
-                      : "font-normal border-transparent text-gray-600"
-                  }`}
-                >
-                  Animated Spinner
                 </button>
                 <button
                   onMouseDown={() => setSelectedItem("copy-button")}
@@ -308,8 +324,13 @@ function App() {
 
 <Spinner />`}
               apiReference={[
-                { prop: "size", type: '"sm" | "md" | "lg"', default: '"md"' },
+                {
+                  prop: "size",
+                  type: '"normal" | "small" | "tiny"',
+                  default: '"md"',
+                },
               ]}
+              previewChildren={spinnerExample()}
             />
           ) : selectedItem === "reasoning-traces" ? (
             <ComponentDoc
@@ -321,6 +342,28 @@ function App() {
             <ComponentDoc
               componentName="Copy Button"
               description="A button that smoothly transitions between it's two child states."
+              installCode="bunx --bun shadcn@latest add https://ui.bartoszbak.org/r/animated-button.json"
+              usageCode={`import { AnimatedButton } from '@/components/ui/animated-button'
+import { Copy, Check } from 'lucide-react'
+
+<AnimatedButton
+  className='size-4.5'
+  secondaryChildren={<Check />}
+  ariaLabel='Copy'
+>
+  <Copy className='size-4' />
+</AnimatedButton>`}
+              apiReference={[
+                { prop: "className", type: "string", default: "-" },
+                { prop: "children", type: "React.ReactNode", default: "-" },
+                {
+                  prop: "secondaryChildren",
+                  type: "React.ReactNode",
+                  default: "-",
+                },
+                { prop: "onClick", type: "() => void", default: "-" },
+                { prop: "ariaLabel", type: "string", default: "-" },
+              ]}
               previewChildren={animatedButtonExample()}
               frameScale={"160"}
             />

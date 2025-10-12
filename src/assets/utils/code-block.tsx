@@ -141,9 +141,10 @@ export function CodeBlock({
       <div className="overflow-x-auto">
         <div className="p-4">
           <pre
-            className={
+            className={cn(
+              "font-jetbrains-mono tracking-wide",
               wrap ? "whitespace-pre-wrap break-words" : "whitespace-pre"
-            }
+            )}
           >
             {lines.map((line, lineIndex) => {
               const tokens = highlightSyntax(line);
@@ -159,7 +160,7 @@ export function CodeBlock({
                       {lineIndex + 1}
                     </span>
                   )}
-                  <code className="flex-1">
+                  <code className="font-jetbrains-mono flex-1">
                     {tokens.map((token, tokenIndex) => (
                       <span
                         key={tokenIndex}
