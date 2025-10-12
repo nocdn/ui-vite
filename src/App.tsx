@@ -48,7 +48,7 @@ function animatedButtonExample() {
         <span className="opacity-30 -translate-y-[1px]">Copy Animation</span>
         <MoveRight strokeWidth={1.25} className="opacity-20 mr-0.25" />
         <AnimatedButton
-          className="size-4.5"
+          className="size-4.5 cursor-pointer"
           secondaryChildren={<Check />}
           ariaLabel="Copy"
         >
@@ -59,7 +59,7 @@ function animatedButtonExample() {
         <span className="opacity-30 -translate-y-[1px]">Link animation</span>
         <MoveRight strokeWidth={1.25} className="opacity-20 mr-0.25" />
         <AnimatedButton
-          className="size-4.5"
+          className="size-4.5 cursor-pointer"
           secondaryChildren={<Unlink2 />}
           ariaLabel="Copy"
         >
@@ -233,6 +233,16 @@ function App() {
                   Copy Button
                 </button>
                 <button
+                  onMouseDown={() => setSelectedItem("ticker")}
+                  className={`text-left text-[14px] leading-6 font-inter pl-3 border-l cursor-pointer ${
+                    selectedItem === "ticker"
+                      ? "font-[550] border-gray-950/90 text-gray-950"
+                      : "font-normal border-transparent text-gray-600"
+                  }`}
+                >
+                  Animated Ticker
+                </button>
+                <button
                   onMouseDown={() => setSelectedItem("corner-banner")}
                   className={`text-left text-[14px] leading-6 font-inter pl-3 border-l cursor-pointer ${
                     selectedItem === "corner-banner"
@@ -251,16 +261,6 @@ function App() {
                   }`}
                 >
                   Reasoning Traces
-                </button>
-                <button
-                  onMouseDown={() => setSelectedItem("ticker")}
-                  className={`text-left text-[14px] leading-6 font-inter pl-3 border-l cursor-pointer ${
-                    selectedItem === "ticker"
-                      ? "font-[550] border-gray-950/90 text-gray-950"
-                      : "font-normal border-transparent text-gray-600"
-                  }`}
-                >
-                  Animated Ticker
                 </button>
               </div>
             </div>
