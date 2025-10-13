@@ -11,6 +11,7 @@ import { useQueryState } from "nuqs";
 import GetStartedView from "./views/GetStarted";
 import ComponentDoc from "./views/ComponentDoc";
 import IntroView from "./views/Intro";
+import CompatibilityView from "./views/Compatibility";
 
 import { CorneredButton } from "../registry/default/ui/cornered-button/cornered-button";
 import { AnimatedButton } from "../registry/default/ui/animated-button/animated-button";
@@ -193,16 +194,6 @@ function App() {
                 >
                   Compatibility
                 </button>
-                <button
-                  onMouseDown={() => setSelectedItem("upgrade-guide")}
-                  className={`text-left text-[14px] leading-6 font-inter pl-3 border-l cursor-pointer ${
-                    selectedItem === "upgrade-guide"
-                      ? "font-[550] border-gray-950/90 text-gray-950"
-                      : "font-normal border-transparent text-gray-600"
-                  }`}
-                >
-                  Upgrade guide
-                </button>
               </div>
             </div>
 
@@ -302,6 +293,8 @@ function App() {
             <IntroView />
           ) : selectedItem === "installation" ? (
             <GetStartedView />
+          ) : selectedItem === "compatibility" ? (
+            <CompatibilityView />
           ) : selectedItem === "cornered-button" ? (
             <ComponentDoc
               componentName="Cornered Button"
