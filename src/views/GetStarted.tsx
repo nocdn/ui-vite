@@ -35,11 +35,12 @@ export default function GetStartedView() {
       <p className="mt-6 font-inter text-gray-700 leading-7">
         This will install the cornered button component, which you can check out
         in more detail here:{" "}
-        <span className="font-medium text-blue-700">
-          <a href="http://localhost:5173/?selectedItem=Cornered+Button">
-            cornered button
-          </a>
-        </span>
+        <a
+          href="?item=cornered-button"
+          className="font-medium text-blue-700 cursor-pointer"
+        >
+          cornered button
+        </a>
         .
       </p>
     </div>

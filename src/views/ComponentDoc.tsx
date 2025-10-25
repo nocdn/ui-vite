@@ -44,7 +44,6 @@ export default function ComponentDoc({
           <div className="flex flex-col gap-4 mt-12">
             <div className="flex items-center gap-4 font-geist text-[16px] *:cursor-pointer font-medium">
               <p>Preview</p>
-              <p className="opacity-60">Code</p>
             </div>
             <div
               id="frame"

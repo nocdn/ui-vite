@@ -168,7 +168,7 @@ function App() {
                   onMouseDown={() => setSelectedItem("introduction")}
                   className={`text-left text-[14px] leading-6 font-inter pl-3 border-l cursor-pointer ${
                     selectedItem === "introduction"
-                      ? "font-[550] border-gray-950/90 text-gray-950"
+                      ? "font-[550] border-blue-800/90 text-blue-900/90"
                       : "font-normal border-transparent text-gray-950/60"
                   }`}
                 >
@@ -178,7 +178,7 @@ function App() {
                   onMouseDown={() => setSelectedItem("installation")}
                   className={`text-left text-[14px] leading-6 font-inter pl-3 border-l cursor-pointer ${
                     selectedItem === "installation"
-                      ? "font-[550] border-gray-950/90 text-gray-950"
+                      ? "font-[550] border-blue-800/90 text-blue-900/90"
                       : "font-normal border-transparent text-gray-950/60"
                   }`}
                 >
@@ -188,7 +188,7 @@ function App() {
                   onMouseDown={() => setSelectedItem("compatibility")}
                   className={`text-left text-[14px] leading-6 font-inter pl-3 border-l cursor-pointer ${
                     selectedItem === "compatibility"
-                      ? "font-[550] border-gray-950/90 text-gray-950"
+                      ? "font-[550] border-blue-800/90 text-blue-900/90"
                       : "font-normal border-transparent text-gray-600"
                   }`}
                 >
@@ -207,7 +207,7 @@ function App() {
                   onMouseDown={() => setSelectedItem("cornered-button")}
                   className={`text-left text-[14px] leading-6 font-inter pl-3 border-l cursor-pointer ${
                     selectedItem === "cornered-button"
-                      ? "font-[550] border-gray-950/90 text-gray-950"
+                      ? "font-[550] border-blue-800/90 text-blue-900/90"
                       : "font-normal border-transparent text-gray-600"
                   }`}
                 >
@@ -217,7 +217,7 @@ function App() {
                   onMouseDown={() => setSelectedItem("copy-button")}
                   className={`text-left text-[14px] leading-6 font-inter pl-3 border-l cursor-pointer ${
                     selectedItem === "copy-button"
-                      ? "font-[550] border-gray-950/90 text-gray-950"
+                      ? "font-[550] border-blue-800/90 text-blue-900/90"
                       : "font-normal border-transparent text-gray-600"
                   }`}
                 >
@@ -227,7 +227,7 @@ function App() {
                   onMouseDown={() => setSelectedItem("ticker")}
                   className={`text-left text-[14px] leading-6 font-inter pl-3 border-l cursor-pointer ${
                     selectedItem === "ticker"
-                      ? "font-[550] border-gray-950/90 text-gray-950"
+                      ? "font-[550] border-blue-800/90 text-blue-900/90"
                       : "font-normal border-transparent text-gray-600"
                   }`}
                 >
@@ -237,7 +237,7 @@ function App() {
                   onMouseDown={() => setSelectedItem("corner-banner")}
                   className={`text-left text-[14px] leading-6 font-inter pl-3 border-l cursor-pointer ${
                     selectedItem === "corner-banner"
-                      ? "font-[550] border-gray-950/90 text-gray-950"
+                      ? "font-[550] border-blue-800/90 text-blue-900/90"
                       : "font-normal border-transparent text-gray-600"
                   }`}
                 >
@@ -247,7 +247,7 @@ function App() {
                   onMouseDown={() => setSelectedItem("reasoning-traces")}
                   className={`text-left text-[14px] leading-6 font-inter pl-3 border-l cursor-pointer ${
                     selectedItem === "reasoning-traces"
-                      ? "font-[550] border-gray-950/90 text-gray-950"
+                      ? "font-[550] border-blue-800/90 text-blue-900/90"
                       : "font-normal border-transparent text-gray-600"
                   }`}
                 >
@@ -264,7 +264,7 @@ function App() {
                   onMouseDown={() => setSelectedItem("get-in-touch")}
                   className={`text-left text-[14px] leading-6 font-inter pl-3 border-l cursor-pointer ${
                     selectedItem === "get-in-touch"
-                      ? "font-[550] border-gray-950/90 text-gray-950"
+                      ? "font-[550] border-blue-800/90 text-blue-900/90"
                       : "font-normal border-transparent text-gray-600"
                   }`}
                 >
@@ -274,7 +274,7 @@ function App() {
                   onMouseDown={() => setSelectedItem("contributing")}
                   className={`text-left text-[14px] leading-6 font-inter pl-3 border-l cursor-pointer ${
                     selectedItem === "contributing"
-                      ? "font-[550] border-gray-950/90 text-gray-950"
+                      ? "font-[550] border-blue-800/90 text-blue-900/90"
                       : "font-normal border-transparent text-gray-600"
                   }`}
                 >
