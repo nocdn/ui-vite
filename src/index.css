@@ -148,3 +148,7 @@
     font-size: 14px;
   }
 }
+
+@utility border-nice {
+  border: 1px solid #e8e8e8;
+}

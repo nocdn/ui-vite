@@ -13,6 +13,7 @@ import CopyButtonDocs from "./routes/components/CopyButton.tsx";
 import CornerBannerDocs from "./routes/components/CornerBanner.tsx";
 import ReasoningTracesDocs from "./routes/components/ReasoningTraces.tsx";
 import TrafficLights from "./routes/recreations/TrafficLights.tsx";
+import ExpandingMenu from "./routes/experiments/ExpandingMenu.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -29,6 +30,7 @@ createRoot(document.getElementById("root")!).render(
             <Route path="corner-banner" element={<CornerBannerDocs />} />
             <Route path="reasoning-traces" element={<ReasoningTracesDocs />} />
             <Route path="traffic-lights" element={<TrafficLights />} />
+            <Route path="expanding-menu" element={<ExpandingMenu />} />
           </Route>
         </Routes>
       </BrowserRouter>
