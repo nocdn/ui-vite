@@ -8,9 +8,9 @@ import {
   Check,
 } from "lucide-react";
 import { useQueryState } from "nuqs";
-import GetStartedView from "./views/GetStarted";
-import ComponentDoc from "./views/ComponentDoc";
-import IntroView from "./views/Intro";
+import InstallationView from "./views/Installation";
+import ComponentDoc from "./routes/components/ComponentLayout";
+import IntroductionView from "./views/Introduction";
 import CompatibilityView from "./views/Compatibility";
 
 import { CorneredButton } from "../registry/default/ui/cornered-button/cornered-button";
@@ -290,9 +290,9 @@ function App() {
           className="px-14 pt-10 overflow-y-auto bg-gray-50/35 overscroll-contain"
         >
           {selectedItem === "introduction" ? (
-            <IntroView />
+            <IntroductionView />
           ) : selectedItem === "installation" ? (
-            <GetStartedView />
+            <InstallationView />
           ) : selectedItem === "compatibility" ? (
             <CompatibilityView />
           ) : selectedItem === "cornered-button" ? (
