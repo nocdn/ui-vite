@@ -1,6 +1,6 @@
 import ComponentLayout from "./ComponentLayout";
 import { AnimatedButton } from "../../../registry/default/ui/animated-button/animated-button";
-import { Copy, Check, Unlink2, Link2 } from "lucide-react";
+import { Copy, Check } from "lucide-react";
 
 export default function CopyButtonDocs() {
   const installCode =

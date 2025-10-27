@@ -1,7 +1,7 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
-import { BrowserRouter, Routes, Route } from "react-router";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router";
 import { NuqsAdapter } from "nuqs/adapters/react";
 import IntroductionView from "./views/Introduction.tsx";
 import InstallationView from "./views/Installation.tsx";
@@ -21,6 +21,7 @@ createRoot(document.getElementById("root")!).render(
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout />}>
+            <Route index element={<Navigate to="introduction" replace />} />
             <Route path="introduction" element={<IntroductionView />} />
             <Route path="installation" element={<InstallationView />} />
             <Route path="compatibility" element={<CompatibilityView />} />
